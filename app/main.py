@@ -1,11 +1,14 @@
 from fastapi import FastAPI
-from .database import engine
-from .model import Base
-import app.routers as routers 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
+from .routers import router
 
+app = FastAPI(title="Stripe Subscription Demo")
 
-Base.metadata.create_all(bind=engine)
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-app = FastAPI()
+@app.get("/")
+async def root():
+    return RedirectResponse("/static/index.html")
 
-app.include_router(routers.router)
+app.include_router(router.router)

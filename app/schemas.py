@@ -16,3 +16,21 @@ class CheckoutRequest(BaseModel):
     user_id: int
     request_id: int
     
+    
+    
+    
+    
+class CheckoutSubscriptionRequest(BaseModel):
+    price_id: str
+    email: EmailStr
+    user_id: int
+
+
+class SubscriptionOut(BaseModel):
+    id: int
+    user_id: int
+    email: EmailStr
+    status: str
+
+    class Config:
+        from_attributes = True

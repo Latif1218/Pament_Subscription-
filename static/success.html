@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Payment Succeeded</title>
+  <meta name="description" content="Your subscription is now active" />
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <script src="success.js" defer></script>
+</head>
+<body>
+  <div class="togethere-background"></div>
+  <div class="sr-root">
+    <div class="sr-main">
+      <div class="sr-payment-summary completed-view">
+        <h1>Your payment succeeded!</h1>
+        <h4>Checkout Session details:</h4>
+      </div>
+      <div class="completed-view-section">
+        <pre></pre>
+
+        <button onclick="window.location.href = 'index.html';">Restart demo</button>
+
+        <form action="/customer-portal" method="POST">
+          <input type="hidden" name="sessionId" id="sessionId" />
+          <button type="submit">Manage Billing</button>
+        </form>
+      </div>
+    </div>
+    <div class="sr-content"></div>
+  </div>
+</body>
+</html>

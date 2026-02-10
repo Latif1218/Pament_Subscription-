@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Choose Your Plan</title>
+  <meta name="description" content="Select a monthly or yearly subscription" />
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="togethere-background"></div>
+  <div class="sr-root">
+    <div class="sr-main">
+      <header class="sr-header">
+        <div class="sr-header__logo"></div>
+      </header>
+
+      <h1>Choose a collaboration plan</h1>
+
+      <div class="price-table-container">
+        <!-- Monthly -->
+        <section>
+          <form action="/checkout" method="POST">
+            <input type="hidden" id="monthlyPrice" name="price_id" value="">
+            <img src="img/starter.png" alt="Monthly Plan" width="120" height="120" />
+            <div class="name">Monthly</div>
+            <div class="price">$9.99</div>
+            <div class="duration">per month</div>
+            <button type="submit" id="monthly-btn">Select Monthly</button>
+          </form>
+        </section>
+
+        <!-- Yearly -->
+        <section>
+          <form action="/checkout" method="POST">
+            <input type="hidden" id="yearlyPrice" name="price_id" value="">
+            <img src="img/professional.png" alt="Yearly Plan" width="120" height="120" />
+            <div class="name">Yearly</div>
+            <div class="price">$89.99</div>
+            <div class="duration">per year</div>
+            <button type="submit" id="yearly-btn">Select Yearly</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div id="error-message" class="error-message"></div>
+</body>
+</html>
