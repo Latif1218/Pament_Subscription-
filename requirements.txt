@@ -43,3 +43,4 @@ pandas==3.0.0
 numpy==2.4.2
 openpyxl==3.1.5
 # redis==6.2.13
+pydantic[email]==2.12.5
